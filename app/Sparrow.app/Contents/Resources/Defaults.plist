@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DebugMenuEnabled</key>
+	<false/>
+	<key>GrowlEnabled</key>
+	<true/>
+	<key>LEPLogEnabledFilenames</key>
+	<dict/>
+	<key>MMLogOutputFilenameKey-Disabled</key>
+	<string>~/Library/Logs/Sparrow/Sparrow-%date%.log</string>
+	<key>ShowFormatBar</key>
+	<true/>
+	<key>ShowFullSubject</key>
+	<true/>
+	<key>SoundOnNewMessage</key>
+	<true/>
+	<key>WebContinuousSpellCheckingEnabled</key>
+	<true/>
+	<key>UnifiedInboxEnabled</key>
+	<true/>
+	<key>HideInboxSelectionBar</key>
+	<true/>
+	<key>SidebarEnabled</key>
+	<true/>
+	<key>WindowAnimationDisabled</key>
+	<true/>
+	<key>AdsDisabled</key>
+	<true/>
+	<key>CloudUploadEnabled</key>
+	<true/>
+	<key>CloudUploadSoundEnabled</key>
+	<true/>
+	<key>RemoteImagesEnabled</key>
+	<true/>
+	<key>CFNetworkSocketEnabled</key>
+	<false/>
+	<key>AutomaticFallbackFetchAllContents</key>
+	<true/>
+</dict>
+</plist>

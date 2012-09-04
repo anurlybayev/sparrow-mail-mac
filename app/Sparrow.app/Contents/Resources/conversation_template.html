@@ -1,0 +1,93 @@
+{{%AUTOESCAPE context="HTML"}}
+<html>
+    
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <script type="text/ecmascript" src="{{CONVERSATION_COMPILED_JS_URL:none}}"></script>
+        <link href="{{MMSCROLLBAR_CSS_URL:none}}" rel="stylesheet" type="text/css"/>
+        <link href="{{CONVERSATION_CSS_URL:none}}" rel="stylesheet" type="text/css"/>
+        <script type="text/ecmascript" src="{{CONVERSATION_JS_ADDITIONS_URL:none}}"></script>
+        <link href="{{CONVERSATION_CSS_ADDITIONS_URL:none}}" rel="stylesheet" type="text/css"/>
+    </head>
+    
+    <body id="MainBody">
+		<img src="forward.png" style="display:none" alt=""/>
+		<img src="forwardNormal.png" style="display:none" alt=""/>
+		<img src="forwardActive.png" style="display:none" alt=""/>
+		<img src="reply.png" style="display:none" alt=""/>
+		<img src="replyNormal.png" style="display:none" alt=""/>
+		<img src="replyActive.png" style="display:none" alt=""/>
+		<img src="replyall.png" style="display:none" alt=""/>
+		<img src="replyallNormal.png" style="display:none" alt=""/>
+		<img src="replyallActive.png" style="display:none" alt=""/>
+		<img src="saveas.png" style="display:none" alt=""/>
+		<img src="saveasNormal.png" style="display:none" alt=""/>
+		<img src="saveasActive.png" style="display:none" alt=""/>
+		<img src="draftmenu.png" style="display:none" alt=""/>
+		<img src="draftmenuNormal.png" style="display:none" alt=""/>
+		<img src="draftmenuActive.png" style="display:none" alt=""/>
+		<img src="info.png" style="display:none" alt=""/>
+		<img src="infoNormal.png" style="display:none" alt=""/>
+		<img src="infoActive.png" style="display:none" alt=""/>
+		<img src="replymenu.png" style="display:none" alt=""/>
+		<img src="replymenuNormal.png" style="display:none" alt=""/>
+		<img src="replymenuActive.png" style="display:none" alt=""/>
+		<img src="AddLabel.png" style="display:none" alt=""/>
+		<img src="AddLabelHover.png" style="display:none" alt=""/>
+		<img src="PI_ConversationNormal.png" style="display:none" alt=""/>
+		<img src="PI_ConversationHover.png" style="display:none" alt=""/>
+		<img src="PI_ConversationClicked.png" style="display:none" alt=""/>
+		<img src="replymenureplynormal.png" style="display:none" alt=""/>
+		<img src="replymenureplyhover.png" style="display:none" alt=""/>
+		<img src="replymenureplyactive.png" style="display:none" alt=""/>
+		<img src="draftmenudraftnormal.png" style="display:none" alt=""/>
+		<img src="draftmenudrafthover.png" style="display:none" alt=""/>
+		<img src="draftmenudraftactive.png" style="display:none" alt=""/>
+		<img src="msgmenunormal.png" style="display:none" alt=""/>
+		<img src="msgmenuhover.png" style="display:none" alt=""/>
+		<img src="msgmenuactive.png" style="display:none" alt=""/>
+		<img src="MessageShowquotedtext.png" style="display:none" alt=""/>
+		<img src="MessageShowquotedtextHover.png" style="display:none" alt=""/>
+		<img src="MessageShowquotedtextClicked.png" style="display:none" alt=""/>
+        
+        <div id="notificationBar" style="top: -36px;">
+            <div id="notificationBarText">
+                {{NOTIFICATION_LABEL:none}}
+            </div>
+            <div id="notificationCloseButton" onclick="closeUpdateNotification()">
+            </div>
+        </div>
+        <div id="remoteImagesBar" style="top: -36px;">
+            <div id="remoteImagesBarText">
+                {{REMOTE_IMAGES_LABEL:none}}
+            </div>
+            <div id="remoteImagesCloseButton" onclick="hideLoadRemoteImagesBar()">
+            </div>
+        </div>
+        
+        <div id="main-body">
+            <div id="MainScrollingBodyContents">
+                <div id="conversation-subject" onmouseover="setReplyBarVisibleForFirstMessage(true)" onmouseout="setReplyBarVisibleForFirstMessage(false)">
+                    <div id="title" class="-sparrow-selectableHeaderValue">
+                        {{CONVERSATION_SUBJECT}}
+                    </div>
+                    <div id="labels">
+                    </div>
+                </div>
+                
+                <div class="-sparrow-separator"></div>
+                
+                <div id="Messages">
+                </div>
+            </div>
+        </div>
+		
+        <div id="vertical-scrollbar">
+            <div id="vertical-scrollbar-thumb" class="-sparrow-scrollbar-thumb">
+                <div id="vertical-scrollbar-thumb-interior">
+                </div>
+            </div> 
+		</div>
+    </body>
+    
+</html>

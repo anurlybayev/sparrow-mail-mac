@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>aol</key>
+	<string>aol.png</string>
+	<key>gmail</key>
+	<string>gmail.png</string>
+	<key>yahoo</key>
+	<string>yahoo.png</string>
+	<key>shortmail</key>
+	<string>shortmail.png</string>
+	<key>hotmail</key>
+	<string>hotmail.png</string>
+</dict>
+</plist>

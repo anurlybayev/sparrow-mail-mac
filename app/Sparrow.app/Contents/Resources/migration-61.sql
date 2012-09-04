@@ -1,0 +1,38 @@
+drop index conversation_message_relation_relation_id_idx;
+drop index conversation_subject_idx;
+drop index message_conversation_id_deleted_is_deleted_idx;
+drop index message_conversation_id_mailbox_id;
+drop index message_conversation_id_mailbox_id_deleted_is_deleted_idx;
+drop index message_is_flagged_mailbox_id_deleted_is_deleted;
+drop index message_is_notified_is_seen_idx;
+drop index message_mailbox_id_deleted_idx;
+drop index message_mailbox_id_deleted_is_deleted_idx;
+drop index message_mailbox_id_deleted_is_deleted_is_local_idx;
+drop index message_mailbox_id_flags_dirty_idx;
+drop index message_mailbox_id_has_headers_is_local_idx;
+drop index message_mailbox_id_has_headers_uid_is_local_idx;
+drop index message_mailbox_id_idx;
+drop index message_mailbox_id_is_seen_deleted_is_deleted_idx;
+drop index message_mailbox_id_uid_idx;
+drop index message_msgid_date_idx;
+drop index message_msgid_deleted_is_deleted_idx;
+drop index message_msgid_is_local_idx;
+drop index message_msgid_mailbox_id_is_local_idx;
+drop index message_msgid_to_delete_mailbox_id_idx;
+drop index message_msgid_to_delete_msgid_mailbox_id_idx;
+
+create index message_msgid_idx on message(msgid);
+create index message_mailbox_id_idx on message(mailbox_id);
+create index message_mailbox_id_is_seen_idx on message(mailbox_id, is_seen);
+
+drop index message_relation_relation_id_msgid_idx;
+drop index message_uid_idx;
+
+create index message_relation_relation_id_idx on message_relation(relation_id);
+create index message_uid_mailbox_id_idx on message(uid, mailbox_id);
+
+drop index attachment_mailbox_id_has_contents_is_text_idx;
+create index attachment_mailbox_id_has_contents_idx on attachment(mailbox_id, has_contents);
+
+create table message_label_pending_sync (message_id number, mailbox_id number);
+create index message_label_pending_sync_message_id_idx on message_label_pending_sync(message_id);

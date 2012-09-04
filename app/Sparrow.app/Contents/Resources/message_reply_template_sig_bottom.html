@@ -1,0 +1,75 @@
+{{%AUTOESCAPE context="HTML"}}
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+            <script type="text/ecmascript" src="{{COMPOSER_COMPILED_JS_URL:none}}"></script>
+			<link href="{{MMSCROLLBAR_CSS_URL:none}}" rel="stylesheet" type="text/css">
+			<link href="{{MESSAGE_EDITING_CSS_URL:none}}" rel="stylesheet" type="text/css">
+            <script type="text/ecmascript" src="{{COMPOSER_JS_ADDITIONS_URL:none}}"></script>
+            <link href="{{COMPOSER_CSS_ADDITIONS_URL:none}}" rel="stylesheet" type="text/css"/>
+        </meta>
+    </head>
+    <body onload="setupEditor()">
+        <div id="main-body" contenteditable="true">
+            <div>
+                <div id="reply-content">
+                    <br/>
+                </div>
+                
+                <p style="color: #A0A0A8;">{{REPLY_MESSAGE_LABEL}}</p>
+                <blockquote type="cite" style="border-left-style:solid;border-width:1px;margin-left:0px;padding-left:10px;">
+                    <span id="message-body">
+                        </span>
+                
+                {{#ATTACHMENTS_SEPARATOR}}
+                <div style="border-bottom: 1px solid #f0f0f0; height: 10px;">
+                </div>
+                <br/>
+                
+                <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px;">{{REPLY_ATTACHMENTS_LABEL}}</div>
+                {{/ATTACHMENTS_SEPARATOR}}
+                
+                {{#ATTACHMENTS}}
+                
+                {{#ATTACHMENT_IMAGE}}
+                <div>
+                    {{#ATTACHMENT_FILENAME}}
+                    <div style="">- {{FILENAME}}</div>
+                    {{/ATTACHMENT_FILENAME}}
+                </div>
+                {{/ATTACHMENT_IMAGE}}
+                
+                {{#ATTACHMENT_OTHER}}
+                <div>
+                    {{#ATTACHMENT_FILENAME}}
+                    <div style="">- {{FILENAME}}</div>
+                    {{/ATTACHMENT_FILENAME}}
+                </div>
+                {{/ATTACHMENT_OTHER}}
+                
+                {{/ATTACHMENTS}}
+                </blockquote>
+                
+                <div id="{{SIGNATURE_IDNAME}}"></div>
+
+                <div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        
+        <div id="vertical-scrollbar">
+            <div id="vertical-scrollbar-thumb" class="-sparrow-scrollbar-thumb">
+                <div id="vertical-scrollbar-thumb-interior">
+                </div>
+            </div> 
+		</div>
+        <div id="horizontal-scrollbar">
+            <div id="horizontal-scrollbar-thumb" class="-sparrow-scrollbar-thumb">
+                <div id="horizontal-scrollbar-thumb-interior">
+                </div>
+            </div> 
+		</div>
+
+    </body>
+</html>

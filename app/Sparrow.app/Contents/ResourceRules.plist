@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>rules</key>
+	<dict>
+		<key>^Resources/</key>
+		<true/>
+		<key>^Resources/.*\.lproj/</key>
+		<dict>
+			<key>optional</key>
+			<true/>
+			<key>weight</key>
+			<real>1000</real>
+		</dict>
+		<key>^Resources/.*\.lproj/locversion.plist$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<real>1100</real>
+		</dict>
+		<key>^version.plist$</key>
+		<true/>
+		<key>^Resources/Sparrow\.icns$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<integer>2000</integer>
+		</dict>
+		<key>^Resources/MenuBarIconClicked\.png$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<integer>2000</integer>
+		</dict>
+		<key>^Resources/MenuBarIconOff\.png$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<integer>2000</integer>
+		</dict>
+		<key>^Resources/MenuBarIconOn\.png$</key>
+		<dict>
+			<key>omit</key>
+			<true/>
+			<key>weight</key>
+			<integer>2000</integer>
+		</dict>
+	</dict>
+</dict>
+</plist>

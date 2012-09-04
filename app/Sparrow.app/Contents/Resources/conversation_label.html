@@ -1,0 +1,56 @@
+{{%AUTOESCAPE context="HTML"}}
+<div style="display: inline-block; margin-right: 20px; min-height: 16px;">
+    {{#LABELS}}
+    <div class="-sparrow-labelcontainer" id="Label:{{ENCODED_LABEL_NAME}}">
+		{{#LABEL_WHITE}}
+		<div style="position: relative; background-color: {{LABEL_COLOR}}; color: {{TEXT_COLOR}};" class="-sparrow-label">
+			{{LABEL_NAME}}
+			<div class="-sparrow-labelDeleteW" style="display: inline-block; width: 100%; height: 100%; float: left; position: absolute; left: 0px; top: 0px;">
+				<div class="-sparrow-labelDeleteButtonW" style="display: inline-block; width: 15px; height: 100%; float: right; position: absolute; right: 0px; top: 0px;" onclick="deleteLabel('{{ENCODED_LABEL_NAME}}')">
+				</div>
+			</div>
+		</div>
+		{{/LABEL_WHITE}}
+		{{#LABEL_BLACK}}
+		<div style="position: relative; background-color: {{LABEL_COLOR}}; color: {{TEXT_COLOR}};" class="-sparrow-labelB">
+			{{LABEL_NAME}}
+			<div class="-sparrow-labelDeleteB" style="display: inline-block; width: 100%; height: 100%; float: left; position: absolute; left: 0px; top: 0px;">
+				<div class="-sparrow-labelDeleteButtonB" style="display: inline-block; width: 15px; height: 100%; float: right; position: absolute; right: 0px; top: 0px;" onclick="deleteLabel('{{ENCODED_LABEL_NAME}}')">
+				</div>
+			</div>
+		</div>
+		{{/LABEL_BLACK}}
+    </div>
+    {{/LABELS}}
+    
+    {{#HASIMPORTANT}}
+    <div class="-sparrow-labelcontainer">
+        <div class="-sparrow-priorityinbox" onclick="removeImportant()">
+        </div>
+    </div>
+    {{/HASIMPORTANT}}
+    
+    {{#NOLABELS}}
+    <div id="addlabeltext">{{CONVERSATION_ADDLABEL_BUTTON_LABEL}}</div>
+    {{/NOLABELS}}
+    {{#CAN_MOVE}}
+    <div id="addlabeltext">{{CONVERSATION_MOVETO_BUTTON_LABEL}}</div>
+    {{/CAN_MOVE}}
+</div>
+    
+{{#CAN_ADD_LABELS}}
+<div class="-sparrow-labelcontainer" id="labeladd" style="position: absolute; top:0px; right:0px;">
+    <div class="-sparrow-labeladd" onclick="showAddLabelMenu(event)">
+        <div class="-sparrow-labeladdplus">
+        </div>
+    </div>
+</div>
+{{/CAN_ADD_LABELS}}
+{{#CAN_MOVE}}
+<div class="-sparrow-labelcontainer" id="labeladd" style="position: absolute; top:0px; right:0px;">
+    <div class="-sparrow-labeladd" onclick="showMoveMenu(event)">
+        <div class="-sparrow-moveto">
+        </div>
+    </div>
+</div>
+{{/CAN_MOVE}}

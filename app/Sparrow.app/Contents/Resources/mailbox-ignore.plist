@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>\[Gmail\].*</string>
+	<string>\[Google Mail\].*</string>
+	<string>Deleted Messages</string>
+	<string>Deleted Messages \(.*\)</string>
+	<string>Drafts</string>
+	<string>Drafts \(.*\)</string>
+	<string>.*/Deleted Messages</string>
+	<string>.*\.Deleted Messages</string>
+	<string>.*/Drafts</string>
+	<string>.*\.Drafts</string>
+	<string>Archive</string>
+	<string>Sent</string>
+	<string>Templates</string>
+	<string>Archives</string>
+	<string>Sent Messages</string>
+	<string>Sent Messages \(.*\)</string>
+	<string>.*/Sent Messages</string>
+	<string>.*\.Sent Messages</string>
+	<string>Chats</string>
+	<string>Contacts</string>
+	<string>Emailed Contacts</string>
+	<string>Trash</string>
+</array>
+</plist>

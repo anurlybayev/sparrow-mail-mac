@@ -1,0 +1,99 @@
+body {
+	font-family: Helvetica;
+    font-size: 13px;
+    background-color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    color: #000;
+}
+
+blockquote[type=cite] {
+	border-left-style:solid;
+	border-left-color:#002162;
+	color:#002162;
+    border-width:1px;
+    margin-left:0px;
+    padding-left:10px;
+	padding-right: 0px;
+	margin-right: 0px;
+}
+
+div#main-body {
+    overflow: scroll;
+    padding: 10px;
+    outline: none;
+}
+
+/* outlook support */
+
+pre {
+    white-space: pre-wrap;
+}
+
+.-sparrow-upload {
+    -webkit-user-select: none;
+    display: inline-block;
+}
+
+.-sparrow-upload-image {
+    position: relative;
+    -webkit-user-select: none;
+    display: inline-block;
+}
+
+.-sparrow-upload-image-background {
+    -webkit-user-select: none;
+    background-repeat: no-repeat;
+    display: inline-block;
+    opacity: 0.3;
+    position: absolute;
+    top: 0px; left: 0px;
+}
+
+.-sparrow-upload-image-progress {
+    position: absolute;
+    top: 10px; left: 10px;
+}
+
+.-sparrow-upload-filename {
+    font-weight: bold;
+}
+
+.-sparrow-upload-progress {
+    -webkit-user-modify: read-only;
+    -webkit-user-select: none;
+    
+	cursor: default;
+	font-family: "Helvetica";
+	font-size: 12px; 
+    
+	padding: 1px 4px 1px 4px;
+	color: #51697F;
+	border: 1px solid #B9C5D1;
+	background-color: #D0E9FD;	
+    -webkit-border-radius: 3px;
+    -webkit-box-shadow:0px 1px 0px #fff,inset 0px 1px 0px rgba(255,255,255, .3);
+    
+    text-align: left;
+    display: inline-block;
+}
+
+.-sparrow-upload-error {
+    -webkit-user-modify: read-only;
+    -webkit-user-select: none;
+    
+	cursor: default;
+	font-family: "Helvetica";
+	font-size: 12px; 
+    
+	padding: 1px 4px 1px 4px;
+    color: #fff;
+    border: solid 1px #ff4040;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff6060), color-stop(99%,#ff8080));
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow:0px 1px 0px #fff,inset 0px 1px 0px rgba(255,255,255, .3);
+    
+    text-align: left;
+    display: inline-block;
+}

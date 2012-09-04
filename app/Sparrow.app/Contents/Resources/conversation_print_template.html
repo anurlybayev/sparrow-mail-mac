@@ -1,0 +1,92 @@
+{{%AUTOESCAPE context="HTML"}}
+<html>
+    
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <script type="text/ecmascript" src="{{CONVERSATION_COMPILED_JS_URL:none}}"></script>
+		<link href="{{CONVERSATION_CSS_URL:none}}" rel="stylesheet" type="text/css"/>
+	</head>
+    
+    <body style="background-color: #ffffff">
+        <div>
+            
+			<div style="padding: 15px; border-bottom: 1px solid #f0f0f0;">
+				<div style="padding: 5px; font-size: 17px;">
+					{{CONVERSATION_SUBJECT}}
+				</div>
+				<div style="padding: 5px; font-size: 10px;">
+					{{MESSAGES_COUNT}}
+				</div>
+			</div>
+			
+            {{#MESSAGES}}
+            <div id="Message:{{MESSAGE_ID}}" style="background-color: #ffffff;font-family: Helvetica; font-size: 10px; page-break-after: always;">
+                <div id="Message:{{MESSAGE_ID}}-detailed-header" class="-sparrow-messageDetailedHeader">
+					<div style="height: 20px;">
+					</div>
+					<div class="-sparrow-messageDetailedHeaderNoArrow">
+						<table>
+							{{#FROM}}
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_FROM_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue">{{MESSAGE_FROM}}</td>
+							</tr>
+							{{/FROM}}
+							{{#REPLY_TO}}
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_REPLYTO_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue">{{MESSAGE_REPLY_TO}}</td>
+							</tr>
+							{{/REPLY_TO}}
+							{{#UNDISCLOSED_RECIPIENT}}
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_TO_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue"><span style="font-style:italic">undisclosed recipient</span></td>
+							</tr>
+							{{/UNDISCLOSED_RECIPIENT}}
+							{{#TO}}
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_TO_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue">{{MESSAGE_TO}}</td>
+							</tr>
+							{{/TO}}
+							{{#CC}}
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_CC_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue">{{MESSAGE_CC}}</td>
+							</tr>
+							{{/CC}}
+							{{#BCC}}
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_BCC_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue">{{MESSAGE_BCC}}</td>
+							</tr>
+							{{/BCC}}
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_DATE_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue">{{MESSAGE_DATE}}</td>
+							</tr>
+							<tr>
+								<td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_SUBJECT_LABEL}}</td>
+								<td class="-sparrow-messageHeaderDetailedValue">{{MESSAGE_SUBJECT:none}}</td>
+							</tr>
+						</table>
+					</div>
+                </div>
+                
+                <div id="Message:{{MESSAGE_ID}}-body-container" class="-sparrow-messageBody">
+                    
+                    <div id="Message:{{MESSAGE_ID}}-body">
+                    </div>
+                    
+                    <div id="Message:{{MESSAGE_ID}}-attachments" class="-sparrow-messageBodyAttachments">
+                    </div>
+                    
+                </div>
+            </div>
+			{{/MESSAGES}}
+			
+        </div>
+    </body>
+    
+</html>

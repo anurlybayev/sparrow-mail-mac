@@ -1,0 +1,1506 @@
+/* message is by default  opened */
+
+div.-sparrow-message, div.-sparrow-messageExpanded {
+    position: relative;
+    background-color: #ffffff;
+    font-family: Helvetica; font-size: 13px;
+    min-height: 23px;
+}
+
+div.-sparrow-message:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F7F7F7), color-stop(99%,#EDEDED));
+}
+
+div.-sparrow-messageBody {
+    text-overflow:ellipsis;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+    
+    overflow: visible; display:none;
+}
+
+blockquote[type=cite] {
+	border-left-style:solid;
+	border-left-color:#002162;
+    border-width:1px;
+	color:#002162;
+    margin-left:0px;
+    padding-left:10px;
+	padding-right: 0px;
+	margin-right: 0px;
+}
+
+body {
+	font-family: Helvetica;
+    font-size: 13px;
+	/*background-color: #d6d6d6;*/
+	/*background-color: #ededed;*/
+    /*background-color: #ffffff;*/
+	/*background-color: #cbcbcb;*/
+	/*background-color: #dfe2e7;*/
+	background-color: #fff;	
+    overflow: hidden;
+    margin: 0px;
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#cccccc));*/
+}
+
+div.-sparrow-messageHeader:hover {
+    background: none;
+    -webkit-box-shadow: none;
+}
+
+div.-sparrow-messageHeader, div.-sparrow-messageHeaderExpanded {
+    position: relative;
+	-webkit-user-select: none;
+	cursor: default;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+	background-color:#fff;
+}
+
+.-sparrow-shortMessageHeader {
+	position: relative;
+    width: 100%;
+}
+
+.-sparrow-messageHeaderContainerLeft {
+	max-width: 100%;
+    min-height: 23px;
+}
+
+.-sparrow-messageHeaderContentLeft {
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	-webkit-transition: margin-right ease-in-out 300ms;
+    position: relative;
+    top: 5px;
+}
+
+.-sparrow-messageHeaderLeft {
+    font-weight: bold;
+    position: relative;
+    top: -1px;
+}
+
+.-sparrow-messageRecipient {
+}
+
+.-sparrow-messageHeaderRight {
+	position: absolute;
+	top: 0px;
+	right: 20px;
+	-webkit-transition: width ease-in-out 300ms;
+}
+
+span.-sparrow-messageHeaderFrom {
+	vertical-align: middle;
+}
+
+span.-sparrow-messageHeaderDate {
+    position: relative;
+    top: 0px;
+	font: 11px Helvetica;
+    font-weight: normal;
+	background: transparent;
+    margin-right: 5px;
+    color: #868686;
+}
+
+div.-sparrow-messagePreview {
+    font-weight: normal;
+    color: #a0a0a0;
+    font-family: Helvetica; font-size: 12px;
+    /* float: left; */
+    /* width: 33%;*/
+    display: none;
+    /*
+    white-space: nowrap;
+    */
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin: 10px;
+    /*background-color: #ff0000; */
+    /* border: 1px solid #000; */
+    vertical-align: middle;
+}
+/*
+span.messagePreview::selection {
+	background: transparent;
+}
+*/
+
+
+span.-sparrow-messageHeaderDetailsButton {
+    display: inline;
+}
+
+div.-sparrow-messageDetailedHeaderNoArrow {
+	padding: 10px;
+	padding-bottom: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+	background-color: #f0f0f0;
+	-webkit-border-radius: 5px;
+    
+    clear: right;
+}
+
+div.-sparrow-messageDetailedHeader {
+	/*display: none;*/
+	/*margin-top: 5px;*/
+	margin-bottom: 0px;
+	/*margin-bottom: 10px;*/
+	margin-left: 20px;
+	margin-right: 20px;
+	position: relative;
+	top: -8px;
+	overflow: hidden;
+	height: 0px;
+	-webkit-transition: height ease-in-out 300ms;
+    
+    height: 0px; margin-top: 0px;
+}
+
+td.-sparrow-messageHeaderDetailedTitle {
+	-webkit-user-select: none;
+	cursor: default;
+    text-align: right;
+    font-weight: bold;
+    color: #808080;
+    vertical-align: top;
+    white-space: nowrap;
+    font-family: "Lucida Grande";
+	font-size: 11px;
+}
+
+td.-sparrow-messageHeaderDetailedValue {
+    font-family: "Lucida Grande"; 
+	font-size: 11px;
+    color: #000;
+}
+
+.-sparrow-messageHeaderDetailedValueString {
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    height: 17px;
+}
+
+span.-sparrow-backArrow {
+    visibility: hidden;
+    float: left;
+}
+
+div.-sparrow-mainConversationView {
+	width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 1px;
+}
+/*
+#e5e5e5
+#e2e3e2
+#dfdede
+#d9d9d8
+#d4d4d3
+#cfcfce
+#cac9c9
+#c5c4c4
+#c1c1c1
+*/
+
+div.-sparrow-quotedTextLabel {
+    font-family: Helvetica;
+    font-size: 11px;
+	color:#006AE3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: inline-block;
+	cursor: default;
+    -webkit-user-select: none;
+}
+
+div.-sparrow-quotedTextLabel:hover {
+	/*color:#005ec9;*/
+	color:#004eb9;
+}
+
+div.-sparrow-quotedTextLabel:active {
+	color:#008AF3;
+}
+
+div.-sparrow-quotedTextLabelHide {
+    font-family: Helvetica;
+    font-size: 11px;
+	color:#006AE3;	
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: inline-block;
+	cursor: default;
+    -webkit-user-select: none;
+}
+
+div.-sparrow-quotedTextLabelHide:hover {
+	/*color:#005ec9;*/
+	color:#004eb9;
+}
+
+div.-sparrow-quotedTextLabelHide:active {
+	color:#008AF3;
+}
+
+div.-sparrow-replyBar {
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#f3f3f3));*/
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-left: 0px;
+	margin-right: 0px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+    
+    position: relative; height: 21px; margin-top: 4px;
+}
+
+.-sparrow-replyBarButton {
+    border: 1px solid #e0e0e0;
+	-webkit-border-radius:10px;
+    color: #a0a0a0;
+    padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+    padding-bottom: 8px;
+
+	cursor: default;
+	opacity: 0.6;
+}
+
+.-sparrow-replyBarButton:hover {
+    border: 1px solid #a0a0a0;
+    color: #505050;
+	
+	cursor: default;
+	opacity: 1;
+}
+
+img.-sparrow-favoriteImageOff {
+	cursor: default;
+	opacity: 0.8;
+    
+    vertical-align: middle;
+    position: relative;
+    top: 0px;
+    margin-right: 5px;
+    display:none;
+    
+    width: 16px;
+    height: 16px;
+}
+
+img.-sparrow-favoriteImageOff:hover {
+	cursor: default;
+	opacity: 1;
+}
+
+img.-sparrow-favoriteImageOn {
+	cursor: default;
+	opacity: 1.0;
+    
+    vertical-align: middle;
+    position: relative;
+    top: 0px;
+    margin-right: 5px;
+    display:inline;
+    
+    width: 16px;
+    height: 16px;
+}
+
+img.-sparrow-favoriteImageOn:hover {
+	cursor: default;
+	opacity: 0.6;
+}
+
+.-sparrow-menuReplyButtonContainer {
+	-webkit-transition: opacity ease-in-out 300ms;
+}
+
+.-sparrow-address {
+	-webkit-user-drag:element;
+	-webkit-user-select:none;
+    
+	position: relative;
+	top: -3px;
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 2px;
+	padding-bottom: 0px;
+	height: 17px;
+    
+	border: solid 1px transparent;
+	-webkit-border-radius: 20px;
+}
+
+.-sparrow-address:-webkit-drag {
+    opacity: 0.7;
+}
+
+.-sparrow-address::selection {
+	background: transparent;
+}
+
+.-sparrow-address:hover {
+	cursor: default;
+    /*
+	position: relative;
+	top: -4px;
+	display: inline-block;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 3px;
+	padding-bottom: 0px;
+	height: 17px;
+    */
+    /*
+	background: -webkit-gradient(linear, left top, left bottom, from(#8292b4), to(#7385ac));
+	color: #ffffff;
+	-webkit-border-radius: 10px;
+    */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DDE7F8), color-stop(100%,#BCCEF1));
+	border: solid 1px #849de3;
+	-webkit-box-shadow:inset 0px 1px 0px rgba(255,255,255, .3);
+}
+
+
+div#MainScrollingBodyWindow	{ 
+	position:relative;
+	overflow:hidden;
+}
+
+div#MainScrollingBodyContents {
+	/*padding-bottom: 13px;*/
+    width: 100%;
+}
+
+div.-sparrow-messageAttachment {
+	-webkit-user-drag:element;
+	-webkit-user-select:none;
+	clear: left;
+	float:left;
+	width:auto;
+	padding: 10px;
+}
+
+div.-sparrow-messageAttachment:-webkit-drag {
+    opacity: 0.7;
+}
+
+div.-sparrow-messageAttachmentSelected {
+	-webkit-user-drag:element;
+	-webkit-user-select:none;
+	clear: left;
+	float:left;
+	width:auto;
+	padding: 10px;
+	background-color: #b4d5fe;
+    border-radius: 10px;
+}
+
+div.-sparrow-messageAttachment {
+}
+
+div.-sparrow-messageAttachmentContainerSelected {
+	background-color: #b4d5fe;
+    border-radius: 10px;
+}
+
+.-sparrow-topButton {
+	cursor: default;
+	display: inline-block;
+	font: 10px Helvetica;
+	font-weight: bold;
+	color: #868686;
+	text-shadow: 0px 1px 0px rgba(255,255,255, .5);
+	border: solid 1px #fff;
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F6F6F6), color-stop(100%,#ffffff));*/
+	-webkit-border-radius: 4px;
+	/* position */
+	position: relative;
+	top: -2px;
+	vertical-align: middle;
+	margin-right:-5px;
+}
+
+.-sparrow-topButtonInfo {
+    width: 30px;
+    height: 21px;
+}
+
+.-sparrow-topButtonReply {
+    /*width: 41px;*/
+    width: 50px;
+    height: 21px;
+}
+
+.-sparrow-topButtonDraft {
+    /*width: 41px;*/
+    width: 50px;
+    height: 21px;
+}
+
+
+.-sparrow-buttonInfo {
+    position: absolute;
+    top: -5px;
+    left: 0px;
+    
+	display: inline-block;
+	background-image: url(infoNormal.png); background-repeat: no-repeat;
+	background-position: 4px 8px;
+    background-size: 22px 15px;
+    /*background-color: green;*/
+    
+    width: 30px;
+    height: 31px;
+}
+
+.-sparrow-buttonInfo:hover {
+	background-image: url(info.png); background-repeat: no-repeat;
+}
+
+.-sparrow-buttonInfo:active {
+	color: #0067BD;
+	background-image: url(infoActive.png); background-repeat: no-repeat;
+}
+
+.-sparrow-bottomButton {
+	cursor: default;
+	display: inline-block;
+	font: 11px Helvetica;-webkit-font-smoothing: antialiased;
+	font-weight: bold;
+	color: #868686;
+	text-shadow: 0px 1px 0px rgba(255,255,255, .5);
+	border: solid 1px #fff;
+	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F6F6F6), color-stop(100%,#ffffff));*/
+	-webkit-border-radius: 4px;
+	/* position */
+	position: relative;
+	top: -1px;
+	vertical-align: middle;
+    
+    height: 21px;
+
+}
+
+.-sparrow-bottomReplyButton {
+	display: inline-block;
+	background-image: url(replyNormal.png); background-repeat: no-repeat;
+	background-position: 8px 3px;
+    background-size: 22px 15px;
+    
+    height: 21px; padding-left: 35px; padding-right: 0px;
+}
+
+.-sparrow-bottomReplyButton:hover {
+	color: #565656;
+	background-image: url(reply.png); background-repeat: no-repeat;
+    background-size: 22px 15px;
+}
+
+.-sparrow-bottomReplyButton:active {
+	color: #0067BD;
+	background-image: url(replyActive.png); background-repeat: no-repeat;
+	background-position: 9px 3px;
+}
+
+.-sparrow-bottomReplyAllButton {
+	display: inline-block;
+	background-image: url(replyallNormal.png); background-repeat: no-repeat;
+	background-position: 8px 3px;
+    background-size: 23px 15px;
+    
+    height: 21px; padding-left: 35px; padding-right: 0px;
+}
+
+.-sparrow-bottomReplyAllButton:hover {
+	color: #565656;
+	background-image: url(replyall.png); background-repeat: no-repeat;
+}
+
+.-sparrow-bottomReplyAllButton:active {
+	color: #0067BD;
+	background-image: url(replyallActive.png); background-repeat: no-repeat;
+}
+
+.-sparrow-bottomForwardButton {
+	display: inline-block;
+	background-image: url(forwardNormal.png); background-repeat: no-repeat;
+	background-position: 8px 3px;
+    background-size: 22px 15px;
+    
+    height: 21px; padding-left: 35px; padding-right: 0px;
+}
+
+.-sparrow-bottomForwardButton:hover {
+	color: #565656;
+	background-image: url(forward.png); background-repeat: no-repeat;
+}
+
+.-sparrow-bottomForwardButton:active {
+	color: #0067BD;
+	background-image: url(forwardActive.png); background-repeat: no-repeat;
+}
+
+.-sparrow-bottomDownloadButton {
+	display: inline-block;
+	background-image: url(saveasNormal.png); background-repeat: no-repeat;
+	background-position: 0px 3px;
+    background-size: 22px 15px;
+    
+    height: 21px; margin-left: -5px; padding-left: 25px; padding-right: 13px;
+}
+
+.-sparrow-bottomDownloadButton:hover {
+	color: #565656;
+	background-image: url(saveas.png); background-repeat: no-repeat;
+}
+
+.-sparrow-bottomDownloadButton:active {
+	color: #0067BD;
+	background-image: url(saveasActive.png); background-repeat: no-repeat;
+}
+
+#conversation-subject {
+    /*	background-color:#f5f5f5;*/
+    background-color:#fff;
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#f5f5f5));*/
+	padding: 15px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#title {
+/*
+	font: 18px Helvetica;
+	font-weight: bold;
+	color: #383838;
+	text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+*/
+	color: #000;
+	font: 13px Helvetica;
+	font-weight: bold;
+	text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+    margin-left: 0px;
+}
+
+#titleSub {
+	font: 11px Helvetica;
+	font-weight: normal;
+	/*color: #383838;*/
+	text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+	color: #000;
+}
+
+.-sparrow-separator {
+	background-color: #D6D6D6;
+    width: 100%;
+	height:1px;
+}
+
+div.-sparrow-labelcontainer {
+    display: inline-block;
+    margin: 0px;
+    margin-top: 0px;
+	margin-bottom: 2px;
+    cursor: default;
+}
+
+#addlabeltext {
+    cursor: default;
+    display: inline-block;
+    margin: 0px;
+    margin-bottom: 4px;
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
+	font: 9px "Lucida Grande";
+    color: #888;
+    height: 16px;
+}
+
+.-sparrow-priorityinbox {
+	cursor: default;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	top: 0px;
+    width: 18px;
+    height: 19px;
+    
+	background-image: url(PI_ConversationNormal.png); background-repeat: no-repeat;
+    background-size: 18px 18px;
+}
+
+.-sparrow-priorityinbox:hover {
+	cursor: default;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+    
+	top: 0px;
+    width: 18px;
+    height: 19px;
+    
+	background-image: url(PI_ConversationHover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-priorityinbox:active {
+	cursor: default;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+    
+	top: 0px;
+    width: 18px;
+    height: 19px;
+    
+	background-image: url(PI_ConversationClicked.png); background-repeat: no-repeat;
+}
+
+.-sparrow-labeladd {
+	cursor: default;
+	display: inline-block;
+	font: 9px Helvetica;
+	font-weight: bold;
+	color: #868686;
+	text-shadow: 0px 1px 0px rgba(255,255,255, .5);
+	border: solid 1px #d6d6d6;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F6F6F6), color-stop(100%,#ffffff));
+	-webkit-border-radius: 4px;
+	position: relative;
+	vertical-align: middle;
+    
+    width: 16px;
+    height: 16px;
+}
+
+.-sparrow-labeladd:hover {
+	color: #fff;
+	text-shadow: 0px 1px 0px rgba(0,0,0, .4);
+	border: solid 1px #256796;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5EADE9), color-stop(100%,#2977D3));
+	-webkit-box-shadow:inset 0px 1px 0px rgba(255,255,255, .4);
+}
+
+.-sparrow-labeladd:active {
+	color: #fff;
+	text-shadow: 0px 1px 0px rgba(0,0,0, .4);
+	border: solid 1px #256796;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5EADE9), color-stop(100%,#2977D3));
+    opacity: 0.8;
+}
+
+.-sparrow-moveto {
+	background-image: url(moveto.png); background-repeat: no-repeat;
+	background-position: 4px 4px;
+    background-size: 8px 8px;
+    width: 16px;
+    height: 16px;
+}
+
+.-sparrow-moveto:hover {
+	background-image: url(movetoHover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-moveto:active {
+	background-image: url(movetoHover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-labeladdplus {
+	background-image: url(AddLabel.png); background-repeat: no-repeat;
+	background-position: 4px 4px;
+    background-size: 8px 9px;
+    width: 16px;
+    height: 16px;
+}
+
+.-sparrow-labeladdplus:hover {
+	background-image: url(AddLabelHover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-labeladdplus:active {
+	background-image: url(AddLabelHover.png); background-repeat: no-repeat;
+}
+
+div.-sparrow-label {
+    font: 9px "Lucida Grande";
+	font-weight: normal;
+	text-shadow: 0px -1px 0px rgba(0,0,0, .3);
+    display: inline-block;
+	-webkit-border-radius: 3px;
+    background-color: #222;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    -webkit-box-shadow: inset 0px 7px 7px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+div.-sparrow-labelB {
+    font: 9px "Lucida Grande";
+	font-weight: normal;
+	text-shadow: 0px 1px 0px rgba(255,255,255, 0.3);
+    display: inline-block;
+	-webkit-border-radius: 3px;
+    background-color: #222;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    -webkit-box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+div.-sparrow-label:hover {
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+div.-sparrow-labelDeleteB {
+    opacity: 0.4;
+    margin: 0px;
+}
+
+div.-sparrow-labelDeleteB:hover {
+    opacity: 1.0;
+}
+
+div.-sparrow-labelDeleteButtonB {
+	background-image: url(LabelDeleteB.png); background-repeat: no-repeat;
+	background-position: right center;
+    background-size: 13px 10px;
+    opacity: 1.0;
+    margin: 0px;
+}
+
+div.-sparrow-labelDeleteButtonB:hover {
+	background-image: url(LabelDeleteBHover.png); background-repeat: no-repeat;
+    opacity: 1.0;
+}
+
+div.-sparrow-labelDeleteButtonB:active {
+    opacity: 0.5;
+}
+
+div.-sparrow-labelDeleteW {
+    opacity: 0.6;
+    margin: 0px;
+}
+
+div.-sparrow-labelDeleteW:hover {
+    opacity: 1.0;
+}
+
+div.-sparrow-labelDeleteButtonW {
+	background-image: url(LabelDeleteW.png); background-repeat: no-repeat;
+	background-position: right center;
+    background-size: 13px 10px;
+    opacity: 1.0;
+    margin: 0px;
+}
+
+div.-sparrow-labelDeleteButtonW:hover {
+	background-image: url(LabelDeleteWHover.png); background-repeat: no-repeat;
+    opacity: 1.0;
+}
+
+div.-sparrow-labelDeleteButtonW:active {
+    opacity: 0.5;
+}
+
+#labels {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 7px;
+    margin-right: 21px;
+    /*height: 20px;*/
+    overflow: hidden;
+    text-align: right;
+    line-height: 10px;
+}
+
+#updateConversationButton {
+    display: inline-block;
+	cursor: default;
+    color: #aaa;
+}
+
+#updateConversationButton:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+#notificationBar {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#343a3d), color-stop(100%,#252a2d));
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 31px;
+    z-index: 1;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-bottom: 1px solid #aaa;
+	-webkit-transition: top ease-in-out 300ms;
+}
+
+#notificationBarText {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#notificationBarSender {
+    font-weight: bold;
+}
+
+#notificationButton {
+	cursor: default;
+    border-bottom: 1px solid #aaa;
+}
+
+#notificationButton:hover {
+    border-bottom: 1px solid #fff;
+}
+
+#notificationCloseButton {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    width: 16px;
+    height: 17px;
+	background-image: url(NotificationClose.png); background-repeat: no-repeat;
+	background-position: right center;
+    background-size: 16px 17px;
+}
+
+#notificationCloseButton:hover {
+	background-image: url(NotificationCloseHover.png); background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#notificationCloseButton:active {
+	background-image: url(NotificationCloseClicked.png); background-repeat: no-repeat;
+	background-position: right center;
+}
+
+
+div#main-body {
+    position: absolute;
+    overflow: scroll;
+    padding: 0px;
+	background-color: #f5f5f5;
+}
+
+a {
+    color: #006AE3;
+}
+
+a:hover {
+	/*color:#005ec9;*/
+	color:#004eb9;
+}
+
+a:active {
+	color:#008AF3;
+}
+
+.-sparrow-inline-horizontal-scrollbar {
+    position: relative;
+    margin-top: -15px;
+    /*background-color: blue;*/
+    height: 15px;
+    width: 100%;
+	/*-webkit-transition: opacity ease-in-out 300ms;*/
+    border-radius: 4px;
+}
+
+.-sparrow-bottom-horizontal-scrollbar {
+    position: fixed;
+    bottom: 0px;
+    /*background-color: blue;*/
+    height: 15px;
+    width: 100%;
+	/*-webkit-transition: opacity ease-in-out 300ms;*/
+}
+
+/*
+.scrollbar-thumb {
+    background-color:red;
+	-webkit-user-select: none;
+	height:13px;
+    width:20px;
+	opacity: 0.5;
+	-webkit-transition: opacity ease-in-out 300ms;
+}
+*/
+
+.-sparrow-scrollbar-thumb-interior {
+	-webkit-user-select: none;
+	position:relative;
+    top: 6px;
+    height: 6px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 4px;
+}
+
+div.-sparrow-scrollbar-thumb, div.-sparrow-scrollbar-thumb-not-animated {
+    height: 15px;
+    position: relative;
+}
+
+div.-sparrow-quickReply
+{
+    overflow: hidden;
+	height: 0px;
+	/*background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F2F4F5), color-stop(99%,#f9fafa));*/
+	background-color: #FAFAFA;
+	-webkit-transition: height ease-in-out 300ms;
+    position: relative;
+}
+
+div.-sparrow-quickReplyTextContentsContainer, div.-sparrow-quickReplyTextContentsContainerFocus {
+    outline: none;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 21px;
+    margin-bottom: 10px;
+    border: 1px solid #CACACA;
+    padding: 5px;
+    padding-right: 25px;
+    -webkit-border-radius: 5px;
+    background-color: white;
+}
+
+div.-sparrow-quickReplyTextContentsContainerFocus {
+    border: 1px solid -webkit-focus-ring-color;
+	-webkit-box-shadow: 0px 0px 5px #aedcfe;
+}
+
+div.-sparrow-quickReplyTextContents {
+    outline: none;
+    font-family: Helvetica; font-size: 13px;
+    margin: 0px;
+    min-height: 50px;
+}
+
+div.-sparrow-openComposerButton {
+	background-image: url(popout.png); background-repeat: no-repeat;
+    width: 13px;
+    height: 13px;
+    background-size: 13px 13px;
+    opacity: 1.0;
+    position: absolute;
+    right: 26px;
+    top: 5px;
+}
+
+div.-sparrow-openComposerButton:hover {
+    opacity: 0.6;
+}
+
+div.-sparrow-openComposerButton:active {
+    opacity: 1.0;
+}
+
+div.-sparrow-quickReplyProgress {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    -webkit-transition: opacity ease-in-out 300ms;
+    width: 100%;
+}
+
+div.-sparrow-quickReplySending {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px;
+}
+
+div.-sparrow-quickReplySent {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px;
+}
+
+div.-sparrow-quickReplyContents {
+    position: relative;
+    -webkit-transition: opacity ease-in-out 300ms;
+}
+
+div.-sparrow-quickReplyRecipient {
+    font-family: "Lucida Grande"; font-size: 10px;
+    vertical-align: middle;
+    display: inline-block;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+div.-sparrow-buttonSendDisabled, div.-sparrow-buttonSend {
+	cursor: default;
+    font: 11px "Lucida Grande";
+    font-weight: bold;
+    height: 21px;
+    min-width: 45px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    display: inline-block;
+}
+
+div.-sparrow-buttonSendDisabled {
+    color: #ccc;
+    text-shadow: 0px 1px 1px rgba(0,0,0, .7);
+    border: solid 1px #2e5d8f;
+    background: #aaa;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow:0px 0px 1px #fff,inset 0px 0px 1px rgba(255,255,255, 1);
+    -webkit-font-smoothing: antialiased;
+}
+
+div.-sparrow-buttonSend {
+    color: #fff;
+    text-shadow: 0px 1px 1px rgba(0,0,0, .3);
+    border: solid 1px #265688;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#75B4F6), color-stop(99%,#3A7DC4));
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow:0px 1px 0px #fff,inset 0px 1px 0px rgba(255,255,255, .3);
+}
+
+div.-sparrow-buttonSend:hover {
+	-webkit-box-shadow:inset 0px 0px 0px rgba(255,255,255, .3);
+    background: #3A7DC4;
+}
+
+div.-sparrow-buttonSend:active {
+    -webkit-box-shadow:0px 0px 2px #3A7DC4;
+}
+
+div.-sparrow-buttonSendOnly, div.-sparrow-buttonSendOnlyDisabled {
+	cursor: default;
+    font: 11px "Lucida Grande";
+    font-weight: normal;
+    
+    height: 21px;
+    min-width: 45px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    display: inline-block;
+}
+
+div.-sparrow-buttonSendOnlyDisabled {
+    color: #ccc;
+    text-shadow: 0px 1px 1px rgba(0,0,0, .7);
+    border: solid 1px #2e5d8f;
+    background: #aaa;
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow:0px 0px 1px #fff,inset 0px 0px 1px rgba(255,255,255, 1);
+    -webkit-font-smoothing: antialiased;
+}
+
+div.-sparrow-buttonSendOnly {
+    color: #3A3A3A;
+    text-shadow: 0px 1px 1px rgba(255,255,255, .5);
+    border: solid 1px #BABABA;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEFF1), color-stop(99%,#E0E2E4));
+	-webkit-border-radius: 4px;
+    -webkit-box-shadow: 0px 1px 0px #fff,inset 0px 1px 0px rgba(255,255,255, 1);
+}
+
+div.-sparrow-buttonSendOnly:hover {
+    -webkit-box-shadow:inset 0px 0px 0px rgba(255,255,255, 1);
+    background: #E0E2E4;
+}
+
+div.-sparrow-buttonSendOnly:active {
+    -webkit-box-shadow:0px 0px 2px #E0E2E4;
+}
+
+div.-sparrow-buttonCancel {
+	cursor: default;
+    font: 11px "Lucida Grande";
+    font-weight: normal;
+    color: #3A3A3A;
+    text-shadow: 0px 1px 1px rgba(255,255,255, .5);
+    border: solid 1px #BABABA;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EDEFF1), color-stop(99%,#E0E2E4));
+	-webkit-border-radius: 4px;
+    -webkit-box-shadow: 0px 1px 0px #fff,inset 0px 1px 0px rgba(255,255,255, 1);
+    
+    height: 21px;
+    /*min-width: 60px;*/
+    min-width: 45px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    display: inline-block;
+}
+
+div.-sparrow-buttonCancel:hover {
+    -webkit-box-shadow:inset 0px 0px 0px rgba(255,255,255, 1);
+    background: #E0E2E4;
+}
+
+div.-sparrow-buttonCancel:active {
+    -webkit-box-shadow:0px 0px 2px #E0E2E4;
+}
+
+div.-sparrow-quickReplyReplyAll {
+    opacity: 1.0;
+	background-image: url(EnableReplyAllActive.png); background-repeat: no-repeat;
+    width: 32px;
+    height: 21px;
+    background-size: 32px 21px;
+    
+    vertical-align: middle; display: inline-block;
+}
+
+div.-sparrow-quickReplyReplyAll:hover {
+	background-image: url(EnableReplyAllActiveHover.png); background-repeat: no-repeat;
+    /*opacity: 0.6;*/
+}
+
+div.-sparrow-quickReplyReplyAll:active {
+    opacity: 1.0;
+}
+
+
+div.-sparrow-quickReplyReplyNormal {
+    opacity: 1.0;
+	background-image: url(EnableReplyAllNormal.png); background-repeat: no-repeat;
+    background-size: 32px 21px;
+    width: 32px;
+    height: 21px;
+    
+    vertical-align: middle; display: none;
+}
+
+div.-sparrow-quickReplyReplyNormal:hover {
+    opacity: 0.6;
+}
+
+div.-sparrow-quickReplyReplyNormal:active {
+    opacity: 1.0;
+}
+
+div.-sparrow-messageBodyPicture {
+    float: right;
+    height: 38px;
+    width: 38px;
+    background-repeat:no-repeat;
+    background-position: center center;
+	-webkit-border-radius: 3px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.-sparrow-quickReplyCounter {
+    font-family: LucidaGrande; font-size: 11px;
+    font-weight: bold;
+    margin-right: 5px;
+    position: relative;
+    top: 5px;
+    display: inline-block;
+}
+
+.-sparrow-quickReplyButtonsContainer {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding-left: 20px;
+    /*padding-right: 1px;*/
+    padding-right: 21px;
+    white-space: nowrap;
+}
+
+.-sparrow-attachmentImage {
+    position: relative;
+    top: 3px;
+    width: 16px;
+}
+
+.-sparrow-draftIndicator {
+    position: relative;
+    top: 0px;
+    background-color: #ffe0e0;
+    color: #800000;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.-sparrow-buttonReplyMenuReply {
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    
+	background-image: url(replymenureplynormal.png); background-repeat: no-repeat;
+	background-position: 4px 5px;
+    background-size: 21px 15px;
+    /*background-color: blue;*/
+    
+    width: 30px;
+    height: 25px;
+}
+
+.-sparrow-buttonReplyMenuReply:hover {
+	background-image: url(replymenureplyhover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-buttonReplyMenuReply:active {
+	background-image: url(replymenureplyactive.png); background-repeat: no-repeat;
+}
+
+.-sparrow-buttonDraftMenuDraft {
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    
+	background-image: url(draftmenudraftnormal.png); background-repeat: no-repeat;
+	background-position: 4px 5px;
+    background-size: 20px 15px;
+    /*background-color: blue;*/
+    
+    width: 30px;
+    height: 25px;
+}
+
+.-sparrow-buttonDraftMenuDraft:hover {
+	background-image: url(draftmenudrafthover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-buttonDraftMenuDraft:active {
+	background-image: url(draftmenudraftactive.png); background-repeat: no-repeat;
+}
+
+.-sparrow-buttonMsgMenu {
+    position: absolute;
+    top: -1px;
+    right: 0px;
+    
+	background-image: url(msgmenunormal.png); background-repeat: no-repeat;
+	background-position: 4px 5px;
+    background-size: 10px 15px;
+    /*background-color: red;*/
+    
+    width: 20px;
+    height: 25px;
+}
+
+.-sparrow-buttonMsgMenu:hover {
+	background-image: url(msgmenuhover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-buttonMsgMenu:active {
+	background-image: url(msgmenuactive.png); background-repeat: no-repeat;
+}
+
+.-sparrow-detailedHeaderArrow {
+    float: right; -webkit-transition: opacity ease-in-out 300ms;
+}
+
+.-sparrow-detailedHeaderArrowTheArrow {
+    margin-top: -10px; width: 0px; height: 0px; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 10px solid transparent; border-bottom: 10px solid #f0f0f0;
+}
+
+.-sparrow-detailedHeaderArrowRightSpace {
+    width: 72px;
+}
+
+.-sparrow-contentsAnimated {
+    overflow-x: hidden; overflow-y: hidden; display:none; height: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-transition: height ease-in-out 300ms;
+}
+
+.-sparrow-contents {
+    margin-top: 0px; margin-bottom: 0px;
+}
+
+.-sparrow-horizontalScrollview {
+    overflow-x: scroll;
+}
+
+.-sparrow-contentsTopSpace {
+    height: 5px;
+}
+
+.-sparrow-messageBodyAttachments {
+    position: relative; height: auto;
+}
+
+.-sparrow-replyBarContainer {
+    -webkit-transition: opacity 300ms ease-in-out; padding-bottom: 8px; margin-left: 5px; margin-right: 5px;
+}
+
+.-sparrow-replyBarRightButtonsContainer {
+    position: absolute; right: 0px; top: 0px; padding-left: 20px; padding-right: 15px; white-space:nowrap;
+}
+
+.-sparrow-replyBarButtonSpace {
+    margin-left: 10px;
+}
+
+.-sparrow-replyBarLeftButtonsContainer {
+    position: absolute; left: 0px; top: 0px; padding-left: 15px; padding-right: 20px; white-space:nowrap;
+}
+
+.-sparrow-bottomButtonReposition {
+    position: relative; top: 4px;
+}
+
+.-sparrow-quickReplyButtonInner {
+    position: relative; top: 4px;
+}
+
+.-sparrow-quickReplyBottomContainer {
+    position: relative; height: 33px;
+}
+
+.-sparrow-quickReplyRecipientContainer {
+    position: absolute; left: 20px; top: 1px;
+}
+
+.-sparrow-attachmentImageContainer {
+    /*vertical-align: middle;*/
+    position: relative; top: 2px;
+}
+
+.-sparrow-quickReplyButtonSpace {
+    display:inline-block;
+    margin-left: 5px;
+}
+
+#remoteImagesBar {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A3D5F4), color-stop(100%,#91C5E5));
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 31px;
+    z-index: 1;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    border-bottom: 1px solid #aaa;
+	-webkit-transition: top ease-in-out 300ms;
+}
+
+#remoteImagesBarText {
+    padding-top: 8px;
+    padding-bottom: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#remoteImagesOnceButton {
+	cursor: default;
+    border-bottom: 1px solid #000;
+}
+
+#remoteImagesOnceButton:hover {
+    border-bottom: 1px solid #6d6d6d;
+}
+
+#remoteImagesAlwaysButton {
+	cursor: default;
+    border-bottom: 1px solid #000;
+}
+
+#remoteImagesAlwaysButton:hover {
+    border-bottom: 1px solid #6d6d6d;
+}
+
+#remoteImagesCloseButton {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    width: 16px;
+    height: 17px;
+	background-image: url(NotificationImagesClose.png); background-repeat: no-repeat;
+	background-position: right center;
+    background-size: 16px 17px;
+}
+
+#remoteImagesCloseButton:hover {
+	background-image: url(NotificationImagesCloseHover.png); background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#remoteImagesCloseButton:active {
+	background-image: url(NotificationImagesCloseClicked.png); background-repeat: no-repeat;
+	background-position: right center;
+}
+
+.-sparrow-quotedTextButton {
+    margin-left: -3px;
+    width: 28px;
+    height: 16px;
+    background-image: url(MessageShowquotedtext.png); background-repeat: no-repeat;
+    background-size: 28px 16px;
+}
+
+
+.-sparrow-quotedTextButton:hover {
+    background-image: url(MessageShowquotedtextHover.png); background-repeat: no-repeat;
+}
+
+.-sparrow-quotedTextButton:active {
+    background-image: url(MessageShowquotedtextClicked.png); background-repeat: no-repeat;
+}
+
+#patch ins {background:#dfd;text-decoration:none;display:block;padding:0 10px;}
+#patch del {background:#fdd;text-decoration:none;display:block;padding:0 10px;}

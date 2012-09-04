@@ -1,0 +1,38 @@
+<div style="height:auto; text-align:center;-webkit-user-drag:none;">
+	{{#ATTACHMENT_IMAGE}}
+	<div style="position:relative;" onmouseover="setAttachmentLabelVisible('{{MESSAGE_ID}}:{{PART_ID}}', true);" onmouseout="setAttachmentLabelVisible('{{MESSAGE_ID}}:{{PART_ID}}', false);">
+		{{#ATTACHMENT_IMAGE_PDF}}
+		<img src="{{IMAGE_PATH:none}}" style="max-height: 300px; display:inline; -webkit-user-drag:none; -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);"/>
+		{{/ATTACHMENT_IMAGE_PDF}}
+		{{#ATTACHMENT_IMAGE_OTHER}}
+		<img src="{{IMAGE_PATH:none}}" style="max-height: 300px; display:inline; -webkit-user-drag:none;"/>
+		{{/ATTACHMENT_IMAGE_OTHER}}
+		{{#ATTACHMENT_FILENAME}}
+		<div id="MMAttachment:{{MESSAGE_ID}}:{{PART_ID}}:label" style="position: absolute; top: 0px; left: 0px; text-align: right; max-width: 150px; -webkit-user-drag:none; color: #fff; background-color: rgba(0, 0, 0, 0.7); padding: 5px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; opacity: 0;-webkit-transition: opacity 300ms ease-in-out;">{{FILENAME}}</div>
+		{{/ATTACHMENT_FILENAME}}
+	</div>
+	{{/ATTACHMENT_IMAGE}}
+    
+	{{#ATTACHMENT_IMAGE_WITH_CONTENTID}}
+	<div style="position:relative;" onmouseover="setAttachmentLabelVisible('{{MESSAGE_ID}}:{{PART_ID}}', true);" onmouseout="setAttachmentLabelVisible('{{MESSAGE_ID}}:{{PART_ID}}', false);">
+		<img src="{{IMAGE_PATH:none}}" style="max-height: 300px; display:inline; -webkit-user-drag:none;"/>
+		{{#ATTACHMENT_FILENAME}}
+		<div id="MMAttachment:{{MESSAGE_ID}}:{{PART_ID}}:label" style="position: absolute; top: 0px; left: 0px; text-align: right; max-width: 150px; -webkit-user-drag:none; color: #fff; background-color: rgba(0, 0, 0, 0.7); padding: 5px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; opacity: 0;-webkit-transition: opacity 300ms ease-in-out;">{{FILENAME}}</div>
+		{{/ATTACHMENT_FILENAME}}
+	</div>
+	{{/ATTACHMENT_IMAGE_WITH_CONTENTID}}
+    
+	{{#ATTACHMENT_OTHER}}
+	<span style="vertical-align: middle; display: inline-block;">
+		<span>
+			<img src="{{ICON_PATH:none}}" style="height: 32px; display:inline; -webkit-user-drag:none;" style="vertical-align: middle"/>
+		</span>
+		{{#ATTACHMENT_FILENAME}}
+		<div style="text-align: center; width: 150px; -webkit-user-drag:none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{FILENAME}}</div>
+		{{/ATTACHMENT_FILENAME}}
+		{{#ATTACHMENT_FILESIZE}}
+		<div style="text-align: center; width: 150px; -webkit-user-drag:none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{FILESIZE}}</div>
+		{{/ATTACHMENT_FILESIZE}}
+	</span>
+	{{/ATTACHMENT_OTHER}}
+</div>

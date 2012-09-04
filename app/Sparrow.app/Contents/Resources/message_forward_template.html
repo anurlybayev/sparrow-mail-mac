@@ -1,0 +1,65 @@
+{{%AUTOESCAPE context="HTML"}}
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+            <script type="text/ecmascript" src="{{COMPOSER_COMPILED_JS_URL:none}}"></script>
+			<link href="{{MMSCROLLBAR_CSS_URL:none}}" rel="stylesheet" type="text/css">
+			<link href="{{MESSAGE_EDITING_CSS_URL:none}}" rel="stylesheet" type="text/css">
+            <script type="text/ecmascript" src="{{COMPOSER_JS_ADDITIONS_URL:none}}"></script>
+            <link href="{{COMPOSER_CSS_ADDITIONS_URL:none}}" rel="stylesheet" type="text/css"/>
+        </meta>
+    </head>
+    <body onload="setupEditor()">
+        <div id="main-body" contenteditable="true">
+            <div>
+                <div>
+                    <br/>
+                </div>
+                <div id="{{SIGNATURE_IDNAME}}"></div>
+                
+                <p style="color: #A0A0A8;">{{FORWARDED_MESSAGE_LABEL}}</p>
+                <blockquote type="cite" style="border-left-style:solid;border-width:1px;margin-left:0px;padding-left:10px;">
+                    <div>
+                        {{#FROM}}
+                        <b>{{FORWARDED_FROM_LABEL}}</b> {{MESSAGE_FROM}}<br/>
+                        {{/FROM}}
+                        {{#REPLY_TO}}
+                        <b>{{FORWARDED_REPLYTO_LABEL}}</b> {{MESSAGE_REPLY_TO}}<br/>
+                        {{/REPLY_TO}}
+                        {{#TO}}
+                        <b>{{FORWARDED_TO_LABEL}}</b> {{MESSAGE_TO}}<br/>
+                        {{/TO}}
+                        {{#CC}}
+                        <b>{{FORWARDED_CC_LABEL}}</b> {{MESSAGE_CC}}<br/>
+                        {{/CC}}
+                        <b>{{FORWARDED_DATE_LABEL}}</b> {{MESSAGE_DATE}}<br/>
+                        <b>{{FORWARDED_SUBJECT_LABEL}}</b> {{MESSAGE_SUBJECT:none}}<br/>
+                    </div>
+                    
+                    <br/>
+                    
+                    <div id="message-body">
+                    </div>
+                </blockquote>
+                
+                <div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        
+        <div id="vertical-scrollbar">
+            <div id="vertical-scrollbar-thumb" class="-sparrow-scrollbar-thumb">
+                <div id="vertical-scrollbar-thumb-interior">
+                </div>
+            </div> 
+		</div>
+        <div id="horizontal-scrollbar">
+            <div id="horizontal-scrollbar-thumb" class="-sparrow-scrollbar-thumb">
+                <div id="horizontal-scrollbar-thumb-interior">
+                </div>
+            </div> 
+		</div>
+
+    </body>
+</html>

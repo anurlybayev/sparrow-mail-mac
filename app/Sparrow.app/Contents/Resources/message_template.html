@@ -1,0 +1,254 @@
+<div id="MessageContainer:{{MESSAGE_ID}}" class="-sparrow-messageContainer">
+                <div id="QuickReply:{{MESSAGE_ID}}" class="-sparrow-quickReply">
+                    <div id="QuickReply:{{MESSAGE_ID}}-progress" class="-sparrow-quickReplyProgress">
+                        <div id="QuickReply:{{MESSAGE_ID}}-sending" class="-sparrow-quickReplySending">
+                            {{CONVERSATION_QUICKREPLY_SENDING}}
+                        </div>
+                        <div id="QuickReply:{{MESSAGE_ID}}-sent" class="-sparrow-quickReplySent">
+                            {{CONVERSATION_QUICKREPLY_SENT}}
+                        </div>
+                        <div class="-sparrow-separator"></div>
+                    </div>
+                    <div id="QuickReply:{{MESSAGE_ID}}-contents" class="-sparrow-quickReplyContents">
+                        <div class="-sparrow-quickReplyTextContentsContainer" id="QuickReply:{{MESSAGE_ID}}-editor-container">
+                            <div id="QuickReply:{{MESSAGE_ID}}-editor" contenteditable="true" class="-sparrow-quickReplyTextContents" onfocus="quickReplyFocus('{{MESSAGE_ID}}')" onblur="quickReplyBlur('{{MESSAGE_ID}}')">
+                            </div>
+                        </div>
+                        <div class="-sparrow-openComposerButton" onclick="openInComposer(event, '{{MESSAGE_ID}}')">
+                        </div>
+                        <div class="-sparrow-quickReplyBottomContainer">
+                            <div class="-sparrow-quickReplyRecipientContainer">
+                                <div id="QuickReply:{{MESSAGE_ID}}-replyall" class="-sparrow-quickReplyReplyAll" onclick="toggleQuickReplyAll('{{MESSAGE_ID}}')">
+                                </div>
+                                <div id="QuickReply:{{MESSAGE_ID}}-replynormal" class="-sparrow-quickReplyReplyNormal" onclick="toggleQuickReplyAll('{{MESSAGE_ID}}')">
+                                </div>
+                                <div id="QuickReply:{{MESSAGE_ID}}-recipient" class="-sparrow-quickReplyRecipient">
+                                </div>
+                            </div>
+                            <div id="QuickReply:{{MESSAGE_ID}}-buttonscontainer" class="-sparrow-quickReplyButtonsContainer">
+                                <div id="QuickReply:{{MESSAGE_ID}}-counter" class="-sparrow-quickReplyCounter"></div>
+                                <div class="-sparrow-buttonCancel" onclick="cancelQuickReplyClicked(event, '{{MESSAGE_ID}}')">
+                                    <span class="-sparrow-quickReplyButtonInner">
+                                        {{CONVERSATION_QUICKREPLY_CANCEL_BUTTON_LABEL}}
+                                    </span>
+                                </div>
+                                <span class="-sparrow-quickReplyButtonSpace">
+                                </span>
+                                
+                                <div id="QuickReply:{{MESSAGE_ID}}-sendbutton" class="-sparrow-buttonSendOnlyDisabled" onclick="sendQuickReply(event, '{{MESSAGE_ID}}')">
+                                    <span class="-sparrow-quickReplyButtonInner">
+                                        {{CONVERSATION_QUICKREPLY_SEND_BUTTON_LABEL}}
+                                    </span>
+                                </div>
+                                
+                                <span id="QuickReply:{{MESSAGE_ID}}-sendandarchivebutton-separator" class="-sparrow-quickReplyButtonSpace">
+                                </span>
+                                
+                                <div id="QuickReply:{{MESSAGE_ID}}-sendandarchivebutton" class="-sparrow-buttonSendDisabled" onclick="sendQuickReplyAndArchive(event, '{{MESSAGE_ID}}', true)">
+                                    <span class="-sparrow-quickReplyButtonInner">
+                                        {{CONVERSATION_QUICKREPLY_SEND_AND_ARCHIVE_BUTTON_LABEL}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="-sparrow-separator"></div>
+                    </div>
+                </div>
+                <div id="Message:{{MESSAGE_ID}}" class="-sparrow-message" onmouseover="setReplyBarVisible('{{MESSAGE_ID}}', true)" onmouseout="setReplyBarVisible('{{MESSAGE_ID}}', false)" onmousedown="clickedOnMessage('{{MESSAGE_ID}}')">
+                    <div id="Message:{{MESSAGE_ID}}-header-background" class="-sparrow-messageHeaderBackground">
+                    </div>
+                    <div id="Message:{{MESSAGE_ID}}-header" class="-sparrow-messageHeader" onclick="clickedOnHeader(event, '{{MESSAGE_ID}}')" onmousedown="noevent(event)" onmouseover="setReplyBarVisible('{{PREVIOUS_MESSAGEID}}', true)" onmouseout="setReplyBarVisible('{{PREVIOUS_MESSAGEID}}', false)">
+                        <div id="Message:{{MESSAGE_ID}}-header-from" class="-sparrow-shortMessageHeader">
+                            <div class="-sparrow-messageHeaderContainerLeft">
+                                <div class="-sparrow-messageHeaderContentLeft" id="Message:{{MESSAGE_ID}}-header-container-left">
+                                    <span class="-sparrow-messageHeaderLeft" id="Message:{{MESSAGE_ID}}-header-from-left">
+                                        <img src="{{FAVORITE_OFF_IMAGE_URL:none}}" id="Message:{{MESSAGE_ID}}-favorite-off" class="-sparrow-favoriteImageOff" onclick="setFavoriteWithEvent(event, '{{MESSAGE_ID}}', true)" onmousedown="noevent(event)"/>
+                                        <img src="{{FAVORITE_ON_IMAGE_URL:none}}" id="Message:{{MESSAGE_ID}}-favorite-on" class="-sparrow-favoriteImageOn" onclick="setFavoriteWithEvent(event, '{{MESSAGE_ID}}', false)" onmousedown="noevent(event)"/>
+                                        <span class="-sparrow-messageHeaderFrom" style="color: {{SHORT_FROM_COLOR}}" id="Message:{{MESSAGE_ID}}-short-from">
+                                            {{HTML_MESSAGE_SHORT_FROM:none}}
+                                        </span>
+                                    </span>
+                                    <span id="Message:{{MESSAGE_ID}}-recipient" class="-sparrow-messageRecipient">
+                                        {{#HAS_MESSAGE_SHORT_RECIPIENT}}
+                                        {{HTML_MESSAGE_TO_SHORT_RECIPIENT:none}}
+                                        {{/HAS_MESSAGE_SHORT_RECIPIENT}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="-sparrow-messageHeaderRight" id="Message:{{MESSAGE_ID}}-header-from-right">
+                                <span id="Message:{{MESSAGE_ID}}-attachment" class="-sparrow-attachmentImageContainer">
+                                <img src="{{ATTACHMENT_ICON_URL:none}}" class="-sparrow-attachmentImage">
+                                </span>
+                                
+                                {{#MESSAGE_IS_DRAFT}}
+                                <span class="-sparrow-draftIndicator">{{DRAFT_LABEL}}</span>
+                                {{/MESSAGE_IS_DRAFT}}
+                                <span class="-sparrow-messageHeaderDate">{{MESSAGE_SHORT_DATE}}</span>
+                                <div id="Message:{{MESSAGE_ID}}-info-button" class="-sparrow-topButton -sparrow-topButtonInfo">
+                                    <div class="-sparrow-buttonInfo" onclick="toggleDetailsWithEvent(event, '{{MESSAGE_ID}}')"></div>
+                                </div>
+                                {{#MESSAGE_IS_NORMAL}}
+                                <div id="Message:{{MESSAGE_ID}}-top-reply-button" class="-sparrow-topButton -sparrow-topButtonReply">
+                                    <!-- <div class="-sparrow-buttonReplyMenu"> -->
+                                        <div class="-sparrow-buttonReplyMenuReply" onclick="menuReply(event, '{{MESSAGE_ID}}')"></div>
+                                        <div class="-sparrow-buttonMsgMenu" onclick="showMenu(event, '{{MESSAGE_ID}}')"></div>
+                                    <!-- </div> -->
+                                </div>
+                                {{/MESSAGE_IS_NORMAL}}
+                                {{#MESSAGE_IS_DRAFT}}
+                                <div id="Message:{{MESSAGE_ID}}-top-reply-button" class="-sparrow-topButton -sparrow-topButtonDraft">
+                                    <!-- <div class="-sparrow-buttonDraftMenu"> -->
+                                        <div class="-sparrow-buttonDraftMenuDraft" onclick="menuDraft(event, '{{MESSAGE_ID}}')"></div>
+                                        <div class="-sparrow-buttonMsgMenu" onclick="showDraftMenu(event, '{{MESSAGE_ID}}')"></div>
+                                    <!-- </div> -->
+                                </div>
+                                {{/MESSAGE_IS_DRAFT}}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="Message:{{MESSAGE_ID}}-detailed-header" class="-sparrow-messageDetailedHeader">
+                        <div id="Message:{{MESSAGE_ID}}-detailed-header-contents">
+                            <div id="Message:{{MESSAGE_ID}}-detailed-header-arrow" class="-sparrow-detailedHeaderArrow">
+                                <div class="-sparrow-detailedHeaderArrowTheArrow"></div>
+                                <div class="-sparrow-detailedHeaderArrowRightSpace"></div>
+                            </div>
+                            <div class="-sparrow-messageDetailedHeaderNoArrow">
+                                <table>
+                                    {{#FROM}}
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_FROM_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span>{{HTML_MESSAGE_FROM:none}}</span></td>
+                                    </tr>
+                                    {{/FROM}}
+                                    {{#REPLY_TO}}
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_REPLYTO_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span>{{HTML_MESSAGE_REPLY_TO:none}}</span></td>
+                                    </tr>
+                                    {{/REPLY_TO}}
+                                    {{#UNDISCLOSED_RECIPIENT}}
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_TO_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span class="-sparrow-messageHeaderDetailedValueString" style="font-style:italic;">{{UNDISCLOSED_RECIPIENT_VALUE}}</span></td>
+                                    </tr>
+                                    {{/UNDISCLOSED_RECIPIENT}}
+                                    {{#TO}}
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_TO_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span>{{HTML_MESSAGE_TO:none}}</span></td>
+                                    </tr>
+                                    {{/TO}}
+                                    {{#CC}}
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_CC_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span>{{HTML_MESSAGE_CC:none}}</span></td>
+                                    </tr>
+                                    {{/CC}}
+                                    {{#BCC}}
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_BCC_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span>{{HTML_MESSAGE_BCC:none}}</span></td>
+                                    </tr>
+                                    {{/BCC}}
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_DATE_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span class="-sparrow-messageHeaderDetailedValueString -sparrow-selectableHeaderValue">{{MESSAGE_DATE}}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="-sparrow-messageHeaderDetailedTitle">{{CONVERSATION_DETAILS_SUBJECT_LABEL}}</td>
+                                        <td class="-sparrow-messageHeaderDetailedValue"><span class="-sparrow-messageHeaderDetailedValueString -sparrow-selectableHeaderValue">{{MESSAGE_SUBJECT:none}}</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="Message:{{MESSAGE_ID}}-contents-animated" class="-sparrow-contentsAnimated">
+                        <div id="Message:{{MESSAGE_ID}}-contents" class="-sparrow-contents">
+                            <div class="-sparrow-horizontalScrollview" id="Message:{{MESSAGE_ID}}-horizontal-scrollview">
+                                <div class="-sparrow-contentsTopSpace"></div>
+                                <div id="Message:{{MESSAGE_ID}}-body-container" class="-sparrow-messageBody" onmousedown="deselectAllAttachment()">
+                                    <!--
+                                    <div id="Message:{{MESSAGE_ID}}-picture" class="-sparrow-messageBodyPicture">
+                                    </div>
+                                    -->
+                                    
+                                    <div id="Message:{{MESSAGE_ID}}-body" class="-sparrow-messageBodyTextContents">
+                                    </div>
+                                    
+                                    <div id="Message:{{MESSAGE_ID}}-attachments" class="-sparrow-messageBodyAttachments">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="Message:{{MESSAGE_ID}}-replybar" class="-sparrow-replyBarContainer">
+                                {{#MESSAGE_IS_NORMAL}}
+                                <div>
+                                    <div class="-sparrow-replyBar">
+                                        <div class="-sparrow-replyBarRightButtonsContainer">
+                                            
+                                            <div class="-sparrow-bottomButton" onclick="forward(event, '{{MESSAGE_ID}}')">
+                                                <div class="-sparrow-bottomForwardButton">
+                                                    <span class="-sparrow-bottomButtonReposition">
+                                                        {{CONVERSATION_FORWARD_BUTTON_LABEL}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <span class="-sparrow-replyBarButtonSpace"/>
+                                            
+                                            {{#HAS_REPLYALL}}
+                                            <div class="-sparrow-bottomButton" onclick="replyall(event, '{{MESSAGE_ID}}')">
+                                                <div class="-sparrow-bottomReplyAllButton">
+                                                    <span class="-sparrow-bottomButtonReposition">
+                                                        {{CONVERSATION_REPLYALL_BUTTON_LABEL}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <span class="-sparrow-replyBarButtonSpace"/>
+                                            {{/HAS_REPLYALL}}
+                                            
+                                            <div class="-sparrow-bottomButton" onclick="reply(event, '{{MESSAGE_ID}}')">
+                                                <div class="-sparrow-bottomReplyButton">
+                                                    <span class="-sparrow-bottomButtonReposition">
+                                                        {{CONVERSATION_REPLY_BUTTON_LABEL}}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="-sparrow-replyBarLeftButtonsContainer">
+                                                <div id="Message:{{MESSAGE_ID}}-replybar-saveattachmentbutton" class="-sparrow-bottomButton" onclick="saveAllAttachements('{{MESSAGE_ID}}')">
+                                                    <div class="-sparrow-bottomDownloadButton">
+                                                        <span id="Message:{{MESSAGE_ID}}-replybar-saveallattachmentslabel" class="-sparrow-bottomButtonReposition">
+                                                            {{CONVERSATION_SAVEALLATTACHMENTS_BUTTON_LABEL}}
+                                                        </span>
+                                                        <span id="Message:{{MESSAGE_ID}}-replybar-saveoneattachmentlabel" class="-sparrow-bottomButtonReposition">
+                                                            {{CONVERSATION_SAVEATTACHMENT_BUTTON_LABEL}}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/MESSAGE_IS_NORMAL}}
+                            </div>
+                            
+                            <div id="Message:{{MESSAGE_ID}}-horizontal-inline-scrollbar" class="-sparrow-inline-horizontal-scrollbar">
+                                <div id="Message:{{MESSAGE_ID}}-horizontal-inline-scrollbar-thumb" class="-sparrow-scrollbar-thumb">
+                                    <div id="Message:{{MESSAGE_ID}}-horizontal-inline-scrollbar-thumb-interior" class="-sparrow-scrollbar-thumb-interior">
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            <div id="Message:{{MESSAGE_ID}}-horizontal-bottom-scrollbar" class="-sparrow-bottom-horizontal-scrollbar">
+                                <div id="Message:{{MESSAGE_ID}}-horizontal-bottom-scrollbar-thumb" class="-sparrow-scrollbar-thumb">
+                                    <div id="Message:{{MESSAGE_ID}}-horizontal-bottom-scrollbar-thumb-interior" class="-sparrow-scrollbar-thumb-interior">
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                <div class="-sparrow-separator"></div>
+                </div>
+</div>

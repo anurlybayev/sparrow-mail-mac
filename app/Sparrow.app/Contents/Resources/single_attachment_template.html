@@ -1,0 +1,11 @@
+{{#ATTACHMENTS}}
+<div id="MMAttachmentContainer:{{MESSAGE_ID}}:{{PART_ID}}" class="-sparrow-messageAttachmentContainer" style="position: relative;">
+    <div id="MMAttachment:{{MESSAGE_ID}}:{{PART_ID}}" class="-sparrow-messageAttachment" style="position: relative;" ondragstart='setDragItem(this, event);' ondblclick="openAttachment('{{MESSAGE_ID}}', '{{PART_ID}}');" onmousedown="clickedOnAttachment(event, '{{MESSAGE_ID}}', '{{PART_ID}}')">
+    </div>
+    <div id="MMAttachment:{{MESSAGE_ID}}:{{PART_ID}}-downloading" style="display: inline-block; position: absolute; top: 29px; left: 180px; float: right;">
+        <!--
+        <img src="{{ACTIVITY_INDICATOR_URL:none}}"/>
+         -->
+    </div>
+</div>
+{{/ATTACHMENTS}}

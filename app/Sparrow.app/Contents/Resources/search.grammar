@@ -1,0 +1,60 @@
+@start = search_term_list;
+
+search_term_list = search_term+;
+
+search_term = starred | unread | read | attachment | inmainfolder | infolder | subject | from | content | to | people | after | before | period | search_string;
+
+starred = is_starred;
+is_starred = 'is' ':' 'starred' | 'is' ':' 'favorite' | 'is' ':' 'flagged';
+
+unread = is_unread;
+is_unread = 'is' ':' 'unread' | 'is' ':' 'unseen';
+
+read = is_read;
+is_read = 'is' ':' 'read' | 'is' ':' 'seen';
+
+attachment = has_attachment;
+has_attachment = 'has' ':' 'attachment';
+
+/*
+attachment_filename = 'attachment' ':' string | 'filename' ':' string;
+*/
+
+inmainfolder = insent | indraft | inimportant | inspam | intrash;
+
+insent = 'is' ':' 'sent';
+indraft = 'is' ':' 'draft';
+inimportant = 'is' ':' 'important';
+inspam = 'is' ':' 'spam';
+intrash = 'is' ':' 'trash';
+
+infolder = 'in' ':' folder_name | 'label' ':' folder_name;
+folder_name = string;
+
+subject = 'subject' ':' string;
+
+from = 'from' ':' string;
+
+to = 'to' ':' string;
+
+people = 'people' ':' string;
+
+content = 'content' ':' string;
+
+after = 'after' ':' date;
+
+before = 'before' ':' date;
+
+date = year '/' month '/' day;
+
+year = /[0-9]{4}/;
+
+month = /[0-9]{2}/;
+
+day = /[0-9]{2}/;
+
+period = 'period' ':' string;
+
+search_string = string;
+
+string = Word | QuotedString;
